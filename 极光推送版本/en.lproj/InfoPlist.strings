@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  极光推送版本
+
+  Created by SoKing on 2017/8/11.
+  Copyright © 2017年 skyer. All rights reserved.
+*/
+CFBundleDisplayName = "今日轨迹";
