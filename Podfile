@@ -14,5 +14,7 @@ target '极光推送版本' do
   pod 'Masonry'
   pod 'IQKeyboardManager'
   pod 'FMDB'
+  pod 'SkyerTools'
+  pod 'ReactiveObjC'
 
 end

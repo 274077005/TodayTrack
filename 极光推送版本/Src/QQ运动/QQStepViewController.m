@@ -11,6 +11,10 @@
 #import "ZSHealthKitManager.h"
 #import "SkyerJpushMessage.h"
 #import "Reachability.h"
+#import "SFHFKeychainUtils.h"
+#import "SkyerUIFactory.h"
+#import <ReactiveObjC.h>
+#import <SkyerTools.h>
 
 #define Color_RGB(r,g,b,a) ([UIColor colorWithRed:(r)/255. green:(g)/255. blue:(b)/255. alpha:(a)])
 #define SCREEN  [UIScreen mainScreen].bounds.size
@@ -44,16 +48,34 @@
  
  透漏一下添加的步数可以同步到QQ运动哦，但是要注意不要一次性添加太多，QQ好像有限制 10万步左右就同步不上了 最好不要超过9万
  */
-    
     self.view.backgroundColor=[UIColor whiteColor];
     self.title=@"刷步";
+    
+    
+    UIButton *btnSave=[SkyerUIFactory skUIButtonInitWithText:@"激活" fontOfSize:17 textColor:[UIColor blackColor] backgroundColor:[UIColor clearColor]];
+    [btnSave addTarget:self action:@selector(gotoactivate) forControlEvents:(UIControlEventTouchUpInside)];
+    btnSave.frame=CGRectMake(0, 0, 35, 35);
+    UIBarButtonItem *rightBtn=[[UIBarButtonItem alloc] initWithCustomView:btnSave];
+    self.navigationItem.rightBarButtonItem=rightBtn;
     
      _manager = [ZSHealthKitManager shareInstance];
     [self uiConfigure];
     
+    @weakify(self);
+    [[[SkyerJpushMessage sharedSkyerJpushMessage] rac_signalForSelector:@selector(skyerGerMessage:)] subscribeNext:^(RACTuple * _Nullable x) {
+        @strongify(self);
+        [self isShow];
+    }];
     
 }
-
+//今日激活界面
+-(void)gotoactivate{
+    UIStoryboard *main=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *view=[main instantiateViewControllerWithIdentifier:@"ActivateViewController"];
+    
+    
+    [self.navigationController pushViewController:view animated:YES];
+}
 /**
  检查网络
 
@@ -104,7 +126,6 @@
 
 
 - (void) viewWillAppear:(BOOL)animated{
-    
     [self getNewNumberClick];
     
     [self isAllowedNotification];
@@ -116,21 +137,22 @@
  判断是否显示激活码
  */
 -(void)isShow{
-    NSString *state=[[SkyerJpushMessage sharedSkyerJpushMessage] skyerGerMessageKeyValue];
-
+    NSString *state=[SkyerJpushMessage sharedSkyerJpushMessage].userType;
+    
     if ([state isEqualToString:@"激活"]) {
-        _labTitle.hidden=YES;
+        _labTitle.text=@"已激活";
         _UserTextField.hidden=YES;
     }else if ([state isEqualToString:@"试用"]){
         if ([[SkyerJpushMessage sharedSkyerJpushMessage] userTryoutTime]) {
-            _labTitle.hidden=YES;
-            _UserTextField.hidden=YES;
+            _labTitle.text=@"试用中,请激活";
+            _UserTextField.hidden=NO;
         }else{
+            [SFHFKeychainUtils storeUsername:@"skyer" andPassword:@"免费" forServiceName:@"skyer" updateExisting:YES error:nil];
             _labTitle.hidden=NO;
             _UserTextField.hidden=NO;
         }
     }else if([state isEqualToString:@"免费"]){
-        _labTitle.hidden=NO;
+        _labTitle.text=@"激活码,长按复制";
         _UserTextField.hidden=NO;
     }
 }
@@ -184,13 +206,14 @@
     [self skSetViewsBorde:getbtn BorderWidth:0 Radius:8 andBorderColor:nil];
     [self.view addSubview:getbtn];
     
-    _labTitle=[[UILabel alloc] initWithFrame:CGRectMake(SCREEN.width/2-100 , self.view.frame.size.height-130, 200, 30)];
+    _labTitle=[[UILabel alloc] initWithFrame:CGRectMake(SCREEN.width/2-100 , self.view.frame.size.height-150, 200, 30)];
     _labTitle.text=@"激活码";
+    _labTitle.textColor=[UIColor redColor];
     _labTitle.textAlignment=1;
     _labTitle.font=[UIFont systemFontOfSize:12];
     [self.view addSubview:_labTitle];
     
-    _UserTextField = [[UITextField alloc] initWithFrame:CGRectMake(SCREEN.width/2-100 , self.view.frame.size.height-100, 200, 30)];
+    _UserTextField = [[UITextField alloc] initWithFrame:CGRectMake(SCREEN.width/2-100 , self.view.frame.size.height-120, 200, 30)];
     [_UserTextField setFont:[UIFont systemFontOfSize:15]];
     [_UserTextField setBorderStyle:UITextBorderStyleRoundedRect];
     _UserTextField.text=[[NSUserDefaults standardUserDefaults] objectForKey:@"registrationID"];
@@ -210,7 +233,7 @@
         if (success) {
             [_manager getStepCount:^(double value, NSError *error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    _numberLabel.text=[NSString stringWithFormat:@"%.f步", value];
+                    _numberLabel.text=[NSString stringWithFormat:@"%.f", value];
                 });
                 
             }];
@@ -230,7 +253,7 @@
  */
 -(void)updataStep:(UIButton *)sender{
     
-    NSString *state=[[SkyerJpushMessage sharedSkyerJpushMessage] skyerGerMessageKeyValue];
+    NSString *state=[SkyerJpushMessage sharedSkyerJpushMessage].userType;
     NSInteger tag=sender.tag;
     if ([state isEqualToString:@"激活"]) {//已经激活正常使用
         [self activate:tag];
@@ -245,13 +268,14 @@
 - (void)activate:(NSInteger)tag{
     if (_numberTextField.text && ![_numberTextField.text isEqualToString:@""]) {
         
-        if ([_numberTextField.text integerValue]<100000) {
+        if ([_numberTextField.text integerValue]<80000) {
             NSInteger count = [_numberTextField.text integerValue]-[_numberLabel.text integerValue];
             [self recordWeight:count];
             
         }else{
             [self showMessage:@"已经到达上限！"];
         }
+        
     }else{
         [self showMessage:@"请输入步数"];
     }
@@ -281,7 +305,7 @@
         
         if ([todayString isEqualToString:oldTodayString])
         {
-            [self showMessage:@"今天已经试用，激活可最大10万步,淘宝查询：（今日轨迹）进行激活"];
+            [self showMessage:@"今天已经试用，激活可最大80000步,加QQ激活(190226680)"];
         }
         else
         {
@@ -294,7 +318,7 @@
             }
             else
             {
-                [self showMessage:@"免费试用每天最多添加2000步,激活可最大10万步,淘宝查询:（今日轨迹）进行激活"];
+                [self showMessage:@"免费试用每天最多添加2000步,激活可最大80000步,加QQ激活(190226680)"];
             }
         }
         
@@ -310,8 +334,9 @@
 
 
 -(void)showMessage:(NSString *)message{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:nil cancelButtonTitle:@"我知道了" otherButtonTitles:nil];
-    [alert show];
+    [SkClassMethod skAlerView:@"提示" message:message cancalTitle:@"我知道了" sureTitle:nil sureBlock:^{
+        
+    }];
 }
     
 #pragma mark -- UITextFieldDelegate
@@ -339,16 +364,15 @@
         __block typeof(weakSelf) strongSelf = weakSelf;
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"步数已更新" delegate:nil cancelButtonTitle:@"我知道了" otherButtonTitles:nil];
-            [alert show];
+            
+            [self showMessage:@"步数更新成功!"];
             
             strongSelf -> _numberTextField.text = @"";
             
             [strongSelf getNewNumberClick];
         });
     } fail:^{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"步数更新失败" delegate:nil cancelButtonTitle:@"我知道了" otherButtonTitles:nil];
-        [alert show];
+        [self showMessage:@"步数更新失败!"];
     }];
 }
 

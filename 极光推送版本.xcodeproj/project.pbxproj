@@ -11,8 +11,10 @@
 		B613593B1ED7D7D6002159DF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B61359391ED7D7D6002159DF /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B613593D1ED7D9C4002159DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B613593C1ED7D9C4002159DF /* SystemConfiguration.framework */; };
 		B62526CA1F0DD1BF00ED07A8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62526C91F0DD1BF00ED07A8 /* CoreMotion.framework */; };
-		B66C204B1F3D4A5000DAC775 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B66C204D1F3D4A5000DAC775 /* InfoPlist.strings */; };
-		B67239F11F301C7500BC04EE /* UIViewController+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = B67239F01F301C7500BC04EE /* UIViewController+Log.m */; };
+		B68897A61FDB82EC007317AA /* ActivateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B68897A51FDB82EC007317AA /* ActivateViewController.m */; };
+		B68897A91FDB8F39007317AA /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B68897A81FDB8F36007317AA /* SFHFKeychainUtils.m */; };
+		B68BC9C41FDA8AA900762395 /* AppDelegate+Jpush.m in Sources */ = {isa = PBXBuildFile; fileRef = B68BC9C31FDA8AA900762395 /* AppDelegate+Jpush.m */; };
+		B68BC9C71FDA8B1F00762395 /* skJPUSHSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B68BC9C51FDA8B1F00762395 /* skJPUSHSet.m */; };
 		B6A66DD81ED6AEF8002B1604 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66DD71ED6AEF8002B1604 /* main.m */; };
 		B6A66DE31ED6AEF8002B1604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6A66DE21ED6AEF8002B1604 /* Assets.xcassets */; };
 		B6A66DEE1ED6AF44002B1604 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B6A66DED1ED6AF44002B1604 /* Podfile */; };
@@ -43,23 +45,14 @@
 		B6A66EBD1ED6B1B8002B1604 /* SGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E701ED6B1B8002B1604 /* SGAlertView.m */; };
 		B6A66EBE1ED6B1B8002B1604 /* sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = B6A66E721ED6B1B8002B1604 /* sound.caf */; };
 		B6A66EBF1ED6B1B8002B1604 /* SGScanningQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E751ED6B1B8002B1604 /* SGScanningQRCodeView.m */; };
-		B6A66EC01ED6B1B8002B1604 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E781ED6B1B8002B1604 /* WGS84TOGCJ02.m */; };
-		B6A66EC11ED6B1B8002B1604 /* SkChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E7B1ED6B1B8002B1604 /* SkChildViewController.m */; };
-		B6A66EC21ED6B1B8002B1604 /* SkScollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E7D1ED6B1B8002B1604 /* SkScollPageView.m */; };
 		B6A66EC31ED6B1B8002B1604 /* address.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6A66E801ED6B1B8002B1604 /* address.plist */; };
 		B6A66EC41ED6B1B8002B1604 /* CityPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6A66E811ED6B1B8002B1604 /* CityPicker.storyboard */; };
 		B6A66EC51ED6B1B8002B1604 /* CityPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E831ED6B1B8002B1604 /* CityPickerViewController.m */; };
 		B6A66EC61ED6B1B8002B1604 /* SkyerCityPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E851ED6B1B8002B1604 /* SkyerCityPicker.m */; };
 		B6A66EC71ED6B1B8002B1604 /* SkyerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E881ED6B1B8002B1604 /* SkyerNavigationController.m */; };
-		B6A66EC81ED6B1B8002B1604 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E8B1ED6B1B8002B1604 /* MBProgressHUD.m */; };
-		B6A66EC91ED6B1B8002B1604 /* SkToast.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E8D1ED6B1B8002B1604 /* SkToast.m */; };
-		B6A66ECA1ED6B1B8002B1604 /* SkyerHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E8F1ED6B1B8002B1604 /* SkyerHUD.m */; };
 		B6A66ECB1ED6B1B8002B1604 /* SkyerUIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E921ED6B1B8002B1604 /* SkyerUIFactory.m */; };
-		B6A66ECC1ED6B1B8002B1604 /* SkDataOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E951ED6B1B8002B1604 /* SkDataOperation.m */; };
-		B6A66ECD1ED6B1B8002B1604 /* SkyerUnlimitedBackstageLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E981ED6B1B8002B1604 /* SkyerUnlimitedBackstageLocation.m */; };
 		B6A66ECE1ED6B1B8002B1604 /* SkyerImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E9B1ED6B1B8002B1604 /* SkyerImagePicker.m */; };
 		B6A66ECF1ED6B1B8002B1604 /* SkyerAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66E9E1ED6B1B8002B1604 /* SkyerAnimation.m */; };
-		B6A66ED01ED6B1B8002B1604 /* SkyerGetVisibleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A66EA11ED6B1B8002B1604 /* SkyerGetVisibleViewController.m */; };
 		B6A66EF01ED6BA57002B1604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6A66EEF1ED6BA57002B1604 /* Main.storyboard */; };
 		B6A6FC291ED6C5D80060FC5E /* IQKeyboardManagerShare.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A6FC281ED6C5D80060FC5E /* IQKeyboardManagerShare.m */; };
 		B6A6FC4C1ED6C5E70060FC5E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A6FC2C1ED6C5E70060FC5E /* FirstViewController.m */; };
@@ -95,24 +88,25 @@
 		B613593A1ED7D7D6002159DF /* Reachability用法.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Reachability用法.h"; sourceTree = "<group>"; };
 		B613593C1ED7D9C4002159DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B62526C91F0DD1BF00ED07A8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		B66C20471F3D4A2800DAC775 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
-		B66C20491F3D4A3000DAC775 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
-		B66C204A1F3D4A4300DAC775 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/Info.plist"; sourceTree = "<group>"; };
-		B66C204C1F3D4A5000DAC775 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B66C204E1F3D4A5100DAC775 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B66C204F1F3D4A5200DAC775 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		B67239EF1F301C7500BC04EE /* UIViewController+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Log.h"; sourceTree = "<group>"; };
-		B67239F01F301C7500BC04EE /* UIViewController+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Log.m"; sourceTree = "<group>"; };
+		B68897A41FDB82EC007317AA /* ActivateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivateViewController.h; sourceTree = "<group>"; };
+		B68897A51FDB82EC007317AA /* ActivateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivateViewController.m; sourceTree = "<group>"; };
+		B68897A71FDB8F34007317AA /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		B68897A81FDB8F36007317AA /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		B68BC9C21FDA8AA900762395 /* AppDelegate+Jpush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Jpush.h"; sourceTree = "<group>"; };
+		B68BC9C31FDA8AA900762395 /* AppDelegate+Jpush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Jpush.m"; sourceTree = "<group>"; };
+		B68BC9C51FDA8B1F00762395 /* skJPUSHSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skJPUSHSet.m; sourceTree = "<group>"; };
+		B68BC9C61FDA8B1F00762395 /* skJPUSHSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skJPUSHSet.h; sourceTree = "<group>"; };
+		B68BC9C81FDA8B9900762395 /* SkyerSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerSingleton.h; sourceTree = "<group>"; };
 		B6A66DD31ED6AEF8002B1604 /* 极光推送版本.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "极光推送版本.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A66DD71ED6AEF8002B1604 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B6A66DE21ED6AEF8002B1604 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6A66DE71ED6AEF8002B1604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6A66DED1ED6AF44002B1604 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B6A66DEF1ED6B131002B1604 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B6A66DF31ED6B143002B1604 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B6A66DF61ED6B179002B1604 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6A66DF71ED6B179002B1604 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B6A66DF81ED6B179002B1604 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Src/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B6A66E301ED6B1B8002B1604 /* SkyerMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerMacro.h; sourceTree = "<group>"; };
 		B6A66E331ED6B1B8002B1604 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6A66E341ED6B1B8002B1604 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
 		B6A66E351ED6B1B8002B1604 /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
@@ -157,12 +151,6 @@
 		B6A66E721ED6B1B8002B1604 /* sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound.caf; sourceTree = "<group>"; };
 		B6A66E741ED6B1B8002B1604 /* SGScanningQRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGScanningQRCodeView.h; sourceTree = "<group>"; };
 		B6A66E751ED6B1B8002B1604 /* SGScanningQRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGScanningQRCodeView.m; sourceTree = "<group>"; };
-		B6A66E771ED6B1B8002B1604 /* WGS84TOGCJ02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGS84TOGCJ02.h; sourceTree = "<group>"; };
-		B6A66E781ED6B1B8002B1604 /* WGS84TOGCJ02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGS84TOGCJ02.m; sourceTree = "<group>"; };
-		B6A66E7A1ED6B1B8002B1604 /* SkChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkChildViewController.h; sourceTree = "<group>"; };
-		B6A66E7B1ED6B1B8002B1604 /* SkChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkChildViewController.m; sourceTree = "<group>"; };
-		B6A66E7C1ED6B1B8002B1604 /* SkScollPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkScollPageView.h; sourceTree = "<group>"; };
-		B6A66E7D1ED6B1B8002B1604 /* SkScollPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkScollPageView.m; sourceTree = "<group>"; };
 		B6A66E801ED6B1B8002B1604 /* address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = address.plist; sourceTree = "<group>"; };
 		B6A66E811ED6B1B8002B1604 /* CityPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CityPicker.storyboard; sourceTree = "<group>"; };
 		B6A66E821ED6B1B8002B1604 /* CityPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityPickerViewController.h; sourceTree = "<group>"; };
@@ -171,24 +159,12 @@
 		B6A66E851ED6B1B8002B1604 /* SkyerCityPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerCityPicker.m; sourceTree = "<group>"; };
 		B6A66E871ED6B1B8002B1604 /* SkyerNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerNavigationController.h; sourceTree = "<group>"; };
 		B6A66E881ED6B1B8002B1604 /* SkyerNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerNavigationController.m; sourceTree = "<group>"; };
-		B6A66E8A1ED6B1B8002B1604 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		B6A66E8B1ED6B1B8002B1604 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		B6A66E8C1ED6B1B8002B1604 /* SkToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkToast.h; sourceTree = "<group>"; };
-		B6A66E8D1ED6B1B8002B1604 /* SkToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkToast.m; sourceTree = "<group>"; };
-		B6A66E8E1ED6B1B8002B1604 /* SkyerHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerHUD.h; sourceTree = "<group>"; };
-		B6A66E8F1ED6B1B8002B1604 /* SkyerHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerHUD.m; sourceTree = "<group>"; };
 		B6A66E911ED6B1B8002B1604 /* SkyerUIFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerUIFactory.h; sourceTree = "<group>"; };
 		B6A66E921ED6B1B8002B1604 /* SkyerUIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerUIFactory.m; sourceTree = "<group>"; };
-		B6A66E941ED6B1B8002B1604 /* SkDataOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkDataOperation.h; sourceTree = "<group>"; };
-		B6A66E951ED6B1B8002B1604 /* SkDataOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkDataOperation.m; sourceTree = "<group>"; };
-		B6A66E971ED6B1B8002B1604 /* SkyerUnlimitedBackstageLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerUnlimitedBackstageLocation.h; sourceTree = "<group>"; };
-		B6A66E981ED6B1B8002B1604 /* SkyerUnlimitedBackstageLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerUnlimitedBackstageLocation.m; sourceTree = "<group>"; };
 		B6A66E9A1ED6B1B8002B1604 /* SkyerImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerImagePicker.h; sourceTree = "<group>"; };
 		B6A66E9B1ED6B1B8002B1604 /* SkyerImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerImagePicker.m; sourceTree = "<group>"; };
 		B6A66E9D1ED6B1B8002B1604 /* SkyerAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerAnimation.h; sourceTree = "<group>"; };
 		B6A66E9E1ED6B1B8002B1604 /* SkyerAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerAnimation.m; sourceTree = "<group>"; };
-		B6A66EA01ED6B1B8002B1604 /* SkyerGetVisibleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerGetVisibleViewController.h; sourceTree = "<group>"; };
-		B6A66EA11ED6B1B8002B1604 /* SkyerGetVisibleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerGetVisibleViewController.m; sourceTree = "<group>"; };
 		B6A66ED51ED6B76B002B1604 /* 极光推送版本.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "极光推送版本.entitlements"; sourceTree = "<group>"; };
 		B6A66EEF1ED6BA57002B1604 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B6A6FC271ED6C5D80060FC5E /* IQKeyboardManagerShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerShare.h; sourceTree = "<group>"; };
@@ -239,7 +215,6 @@
 		B6A6FC6D1ED6C6020060FC5E /* StartAndEndPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartAndEndPoint.m; sourceTree = "<group>"; };
 		B6A6FC751ED6DF1A0060FC5E /* SkyerJpushMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerJpushMessage.h; sourceTree = "<group>"; };
 		B6A6FC761ED6DF1A0060FC5E /* SkyerJpushMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerJpushMessage.m; sourceTree = "<group>"; };
-		B6A6FC781ED6DF9B0060FC5E /* SkyerSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerSingleton.h; sourceTree = "<group>"; };
 		E2FB4AB965547103118D9AE9 /* libPods-极光推送版本.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-极光推送版本.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7713C52B5056C4EB07D97FD /* Pods-极光推送版本.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-极光推送版本.release.xcconfig"; path = "Pods/Target Support Files/Pods-极光推送版本/Pods-极光推送版本.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,8 +284,7 @@
 				B6A66DF51ED6B179002B1604 /* Src */,
 				B6A66DE21ED6AEF8002B1604 /* Assets.xcassets */,
 				B6A66DF81ED6B179002B1604 /* LaunchScreen.storyboard */,
-				B66C20481F3D4A2800DAC775 /* Info.plist */,
-				B66C204D1F3D4A5000DAC775 /* InfoPlist.strings */,
+				B6A66DE71ED6AEF8002B1604 /* Info.plist */,
 				B6A66DED1ED6AF44002B1604 /* Podfile */,
 				B6A66DD61ED6AEF8002B1604 /* Supporting Files */,
 			);
@@ -331,12 +305,17 @@
 				B6A66EEF1ED6BA57002B1604 /* Main.storyboard */,
 				B6A66DF61ED6B179002B1604 /* AppDelegate.h */,
 				B6A66DF71ED6B179002B1604 /* AppDelegate.m */,
+				B68BC9C61FDA8B1F00762395 /* skJPUSHSet.h */,
+				B68BC9C51FDA8B1F00762395 /* skJPUSHSet.m */,
+				B68BC9C81FDA8B9900762395 /* SkyerSingleton.h */,
+				B68BC9C21FDA8AA900762395 /* AppDelegate+Jpush.h */,
+				B68BC9C31FDA8AA900762395 /* AppDelegate+Jpush.m */,
 				B6A6FC451ED6C5E70060FC5E /* MainViewController.h */,
 				B6A6FC461ED6C5E70060FC5E /* MainViewController.m */,
+				B68897A71FDB8F34007317AA /* SFHFKeychainUtils.h */,
+				B68897A81FDB8F36007317AA /* SFHFKeychainUtils.m */,
 				B6A6FC751ED6DF1A0060FC5E /* SkyerJpushMessage.h */,
 				B6A6FC761ED6DF1A0060FC5E /* SkyerJpushMessage.m */,
-				B67239EF1F301C7500BC04EE /* UIViewController+Log.h */,
-				B67239F01F301C7500BC04EE /* UIViewController+Log.m */,
 				B6A6FC471ED6C5E70060FC5E /* QQ运动 */,
 				B6A6FC2A1ED6C5E70060FC5E /* 选项卡1 */,
 				B6A6FC331ED6C5E70060FC5E /* 选项卡2 */,
@@ -358,34 +337,18 @@
 			children = (
 				B61359371ED7D7D6002159DF /* Reachability */,
 				B6A6FC261ED6C5D80060FC5E /* 键盘事件处理 */,
-				B6A66E2F1ED6B1B8002B1604 /* iOS常用宏 */,
 				B6A66E321ED6B1B8002B1604 /* MJExtension */,
 				B6A66E491ED6B1B8002B1604 /* NsDate使用 */,
 				B6A66E4C1ED6B1B8002B1604 /* QQ类似弹框 */,
 				B6A66E541ED6B1B8002B1604 /* sqlite的使用 */,
 				B6A66E651ED6B1B8002B1604 /* 二维码扫描 */,
-				B6A66E761ED6B1B8002B1604 /* 位置矫偏 */,
-				B6A66E791ED6B1B8002B1604 /* 分页显示 */,
 				B6A66E7E1ED6B1B8002B1604 /* 城市选择器 */,
 				B6A66E861ED6B1B8002B1604 /* 导航栏设置 */,
-				B6A66E891ED6B1B8002B1604 /* 弹出土司 */,
 				B6A66E901ED6B1B8002B1604 /* 控件工厂 */,
-				B6A66E931ED6B1B8002B1604 /* 数据缓存类 */,
-				B6A66E961ED6B1B8002B1604 /* 无限后台设置 */,
 				B6A66E991ED6B1B8002B1604 /* 相册访问 */,
 				B6A66E9C1ED6B1B8002B1604 /* 简单动画 */,
-				B6A66E9F1ED6B1B8002B1604 /* 获取当前页面 */,
 			);
 			path = SkTool;
-			sourceTree = "<group>";
-		};
-		B6A66E2F1ED6B1B8002B1604 /* iOS常用宏 */ = {
-			isa = PBXGroup;
-			children = (
-				B6A6FC781ED6DF9B0060FC5E /* SkyerSingleton.h */,
-				B6A66E301ED6B1B8002B1604 /* SkyerMacro.h */,
-			);
-			path = "iOS常用宏";
 			sourceTree = "<group>";
 		};
 		B6A66E321ED6B1B8002B1604 /* MJExtension */ = {
@@ -515,26 +478,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B6A66E761ED6B1B8002B1604 /* 位置矫偏 */ = {
-			isa = PBXGroup;
-			children = (
-				B6A66E771ED6B1B8002B1604 /* WGS84TOGCJ02.h */,
-				B6A66E781ED6B1B8002B1604 /* WGS84TOGCJ02.m */,
-			);
-			path = "位置矫偏";
-			sourceTree = "<group>";
-		};
-		B6A66E791ED6B1B8002B1604 /* 分页显示 */ = {
-			isa = PBXGroup;
-			children = (
-				B6A66E7A1ED6B1B8002B1604 /* SkChildViewController.h */,
-				B6A66E7B1ED6B1B8002B1604 /* SkChildViewController.m */,
-				B6A66E7C1ED6B1B8002B1604 /* SkScollPageView.h */,
-				B6A66E7D1ED6B1B8002B1604 /* SkScollPageView.m */,
-			);
-			path = "分页显示";
-			sourceTree = "<group>";
-		};
 		B6A66E7E1ED6B1B8002B1604 /* 城市选择器 */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,19 +508,6 @@
 			path = "导航栏设置";
 			sourceTree = "<group>";
 		};
-		B6A66E891ED6B1B8002B1604 /* 弹出土司 */ = {
-			isa = PBXGroup;
-			children = (
-				B6A66E8A1ED6B1B8002B1604 /* MBProgressHUD.h */,
-				B6A66E8B1ED6B1B8002B1604 /* MBProgressHUD.m */,
-				B6A66E8C1ED6B1B8002B1604 /* SkToast.h */,
-				B6A66E8D1ED6B1B8002B1604 /* SkToast.m */,
-				B6A66E8E1ED6B1B8002B1604 /* SkyerHUD.h */,
-				B6A66E8F1ED6B1B8002B1604 /* SkyerHUD.m */,
-			);
-			path = "弹出土司";
-			sourceTree = "<group>";
-		};
 		B6A66E901ED6B1B8002B1604 /* 控件工厂 */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,24 +515,6 @@
 				B6A66E921ED6B1B8002B1604 /* SkyerUIFactory.m */,
 			);
 			path = "控件工厂";
-			sourceTree = "<group>";
-		};
-		B6A66E931ED6B1B8002B1604 /* 数据缓存类 */ = {
-			isa = PBXGroup;
-			children = (
-				B6A66E941ED6B1B8002B1604 /* SkDataOperation.h */,
-				B6A66E951ED6B1B8002B1604 /* SkDataOperation.m */,
-			);
-			path = "数据缓存类";
-			sourceTree = "<group>";
-		};
-		B6A66E961ED6B1B8002B1604 /* 无限后台设置 */ = {
-			isa = PBXGroup;
-			children = (
-				B6A66E971ED6B1B8002B1604 /* SkyerUnlimitedBackstageLocation.h */,
-				B6A66E981ED6B1B8002B1604 /* SkyerUnlimitedBackstageLocation.m */,
-			);
-			path = "无限后台设置";
 			sourceTree = "<group>";
 		};
 		B6A66E991ED6B1B8002B1604 /* 相册访问 */ = {
@@ -621,15 +533,6 @@
 				B6A66E9E1ED6B1B8002B1604 /* SkyerAnimation.m */,
 			);
 			path = "简单动画";
-			sourceTree = "<group>";
-		};
-		B6A66E9F1ED6B1B8002B1604 /* 获取当前页面 */ = {
-			isa = PBXGroup;
-			children = (
-				B6A66EA01ED6B1B8002B1604 /* SkyerGetVisibleViewController.h */,
-				B6A66EA11ED6B1B8002B1604 /* SkyerGetVisibleViewController.m */,
-			);
-			path = "获取当前页面";
 			sourceTree = "<group>";
 		};
 		B6A6FC261ED6C5D80060FC5E /* 键盘事件处理 */ = {
@@ -693,6 +596,8 @@
 				B6A6FC491ED6C5E70060FC5E /* QQStepViewController.m */,
 				B6A6FC4A1ED6C5E70060FC5E /* ZSHealthKitManager.h */,
 				B6A6FC4B1ED6C5E70060FC5E /* ZSHealthKitManager.m */,
+				B68897A41FDB82EC007317AA /* ActivateViewController.h */,
+				B68897A51FDB82EC007317AA /* ActivateViewController.m */,
 			);
 			path = "QQ运动";
 			sourceTree = "<group>";
@@ -808,7 +713,6 @@
 			knownRegions = (
 				en,
 				Base,
-				"zh-Hans",
 			);
 			mainGroup = B6A66DCA1ED6AEF8002B1604;
 			productRefGroup = B6A66DD41ED6AEF8002B1604 /* Products */;
@@ -826,7 +730,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A66EB81ED6B1B8002B1604 /* skyer.sqlite in Resources */,
-				B66C204B1F3D4A5000DAC775 /* InfoPlist.strings in Resources */,
 				B6A66EC31ED6B1B8002B1604 /* address.plist in Resources */,
 				B6A66EC41ED6B1B8002B1604 /* CityPicker.storyboard in Resources */,
 				B6A66EBE1ED6B1B8002B1604 /* sound.caf in Resources */,
@@ -864,13 +767,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-极光推送版本-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E309F15C74C0B0C053EA50E8 /* [CP] Copy Pods Resources */ = {
@@ -879,9 +785,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-极光推送版本/Pods-极光推送版本-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -899,28 +809,24 @@
 				B6A66ECF1ED6B1B8002B1604 /* SkyerAnimation.m in Sources */,
 				B6A6FC4D1ED6C5E70060FC5E /* SportGetDataView.m in Sources */,
 				B6A66EA51ED6B1B8002B1604 /* MJFoundation.m in Sources */,
-				B6A66ECC1ED6B1B8002B1604 /* SkDataOperation.m in Sources */,
 				B6A66EA71ED6B1B8002B1604 /* MJPropertyKey.m in Sources */,
 				B6A6FC521ED6C5E70060FC5E /* MapTodayViewController.m in Sources */,
-				B6A66ED01ED6B1B8002B1604 /* SkyerGetVisibleViewController.m in Sources */,
-				B6A66EC91ED6B1B8002B1604 /* SkToast.m in Sources */,
 				B6A6FC5A1ED6C5E70060FC5E /* QQStepViewController.m in Sources */,
 				B6A66EBB1ED6B1B8002B1604 /* SGGenerateQRCodeVC.m in Sources */,
 				B6A6FC731ED6C6020060FC5E /* Student.m in Sources */,
 				B6A6FC6E1ED6C6020060FC5E /* CommonUtility.m in Sources */,
-				B6A66EC81ED6B1B8002B1604 /* MBProgressHUD.m in Sources */,
 				B6A6FC591ED6C5E70060FC5E /* MainViewController.m in Sources */,
 				B6A66EB91ED6B1B8002B1604 /* SkyerFmdbUse.m in Sources */,
 				B6A66EA61ED6B1B8002B1604 /* MJProperty.m in Sources */,
 				B6A66ECB1ED6B1B8002B1604 /* SkyerUIFactory.m in Sources */,
 				B6A66EA81ED6B1B8002B1604 /* MJPropertyType.m in Sources */,
+				B68BC9C41FDA8AA900762395 /* AppDelegate+Jpush.m in Sources */,
 				B6A6FC581ED6C5E70060FC5E /* ThirdViewController.m in Sources */,
-				B6A66EC11ED6B1B8002B1604 /* SkChildViewController.m in Sources */,
-				B6A66ECD1ED6B1B8002B1604 /* SkyerUnlimitedBackstageLocation.m in Sources */,
 				B6A6FC531ED6C5E70060FC5E /* MyTrackViewController.m in Sources */,
 				B6A66EB11ED6B1B8002B1604 /* PopoverViewCell.m in Sources */,
-				B6A66EC01ED6B1B8002B1604 /* WGS84TOGCJ02.m in Sources */,
+				B68BC9C71FDA8B1F00762395 /* skJPUSHSet.m in Sources */,
 				B6A66EBC1ED6B1B8002B1604 /* SkyerScanningCodeVC.m in Sources */,
+				B68897A91FDB8F39007317AA /* SFHFKeychainUtils.m in Sources */,
 				B6A66EC51ED6B1B8002B1604 /* CityPickerViewController.m in Sources */,
 				B6A66ECE1ED6B1B8002B1604 /* SkyerImagePicker.m in Sources */,
 				B6A6FC561ED6C5E70060FC5E /* RouteBookViewController.m in Sources */,
@@ -928,10 +834,10 @@
 				B6A66EBF1ED6B1B8002B1604 /* SGScanningQRCodeView.m in Sources */,
 				B6A66EAB1ED6B1B8002B1604 /* NSObject+MJKeyValue.m in Sources */,
 				B6A66EAE1ED6B1B8002B1604 /* skyerDateUse.m in Sources */,
+				B68897A61FDB82EC007317AA /* ActivateViewController.m in Sources */,
 				B6A6FC711ED6C6020060FC5E /* MANaviPolyline.m in Sources */,
 				B6A6FC741ED6C6020060FC5E /* StartAndEndPoint.m in Sources */,
 				B6A66EB01ED6B1B8002B1604 /* PopoverView.m in Sources */,
-				B6A66EC21ED6B1B8002B1604 /* SkScollPageView.m in Sources */,
 				B6A6FC6F1ED6C6020060FC5E /* LineDashPolyline.m in Sources */,
 				B6A66EA41ED6B1B8002B1604 /* MJExtensionConst.m in Sources */,
 				B6A6FC771ED6DF1A0060FC5E /* SkyerJpushMessage.m in Sources */,
@@ -939,7 +845,6 @@
 				B6A66EAC1ED6B1B8002B1604 /* NSObject+MJProperty.m in Sources */,
 				B6A66E1B1ED6B179002B1604 /* AppDelegate.m in Sources */,
 				B6A6FC511ED6C5E70060FC5E /* MapMineTrackViewController.m in Sources */,
-				B6A66ECA1ED6B1B8002B1604 /* SkyerHUD.m in Sources */,
 				B6A66EAA1ED6B1B8002B1604 /* NSObject+MJCoding.m in Sources */,
 				B6A6FC291ED6C5D80060FC5E /* IQKeyboardManagerShare.m in Sources */,
 				B6A6FC4F1ED6C5E70060FC5E /* SportMapView.m in Sources */,
@@ -950,7 +855,6 @@
 				B6A6FC571ED6C5E70060FC5E /* RouteDetailsViewController.m in Sources */,
 				B6A66EA91ED6B1B8002B1604 /* NSObject+MJClass.m in Sources */,
 				B6A6FC721ED6C6020060FC5E /* MANaviRoute.m in Sources */,
-				B67239F11F301C7500BC04EE /* UIViewController+Log.m in Sources */,
 				B6A6FC5B1ED6C5E70060FC5E /* ZSHealthKitManager.m in Sources */,
 				B6A6FC541ED6C5E70060FC5E /* SecondViewController.m in Sources */,
 				B6A66EC61ED6B1B8002B1604 /* SkyerCityPicker.m in Sources */,
@@ -962,35 +866,11 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		B66C20481F3D4A2800DAC775 /* Info.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B66C20471F3D4A2800DAC775 /* Base */,
-				B66C20491F3D4A3000DAC775 /* en */,
-				B66C204A1F3D4A4300DAC775 /* zh-Hans */,
-			);
-			name = Info.plist;
-			sourceTree = "<group>";
-		};
-		B66C204D1F3D4A5000DAC775 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B66C204C1F3D4A5000DAC775 /* Base */,
-				B66C204E1F3D4A5100DAC775 /* en */,
-				B66C204F1F3D4A5200DAC775 /* zh-Hans */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		B6A66DE81ED6AEF8002B1604 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1029,7 +909,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "极光推送版本/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1043,7 +922,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1076,7 +954,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "极光推送版本/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -1095,12 +972,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = F474Y7ZN3P;
-				INFOPLIST_FILE = "/Users/htwx/Desktop/极光推送版本/极光推送版本/Base.lproj/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = "极光推送版本/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = skyer.todayTrack.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "716ab981-37b7-4931-b7e1-c07930d644d2";
+				PROVISIONING_PROFILE = "c05b5341-fdbc-4e6d-a831-a207db1917a0";
 				PROVISIONING_PROFILE_SPECIFIER = "skyer.todayTrack.com Development";
 			};
 			name = Debug;
@@ -1111,16 +988,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "极光推送版本/极光推送版本.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = F474Y7ZN3P;
-				INFOPLIST_FILE = "/Users/htwx/Desktop/极光推送版本/极光推送版本/Base.lproj/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = "极光推送版本/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = skyer.todayTrack.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "716ab981-37b7-4931-b7e1-c07930d644d2";
-				PROVISIONING_PROFILE_SPECIFIER = "skyer.todayTrack.com Development";
+				PROVISIONING_PROFILE = "3c10a8c8-c694-4a5b-8c2e-f9f2e3cb91f3";
+				PROVISIONING_PROFILE_SPECIFIER = "Distribution skyer.todayTrack.com";
 			};
 			name = Release;
 		};

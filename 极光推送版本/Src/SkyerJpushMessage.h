@@ -12,19 +12,16 @@
 @interface SkyerJpushMessage : NSObject
 SkyerSingletonH(SkyerJpushMessage)
 
+@property (nonatomic,copy) NSString *userType;
+
 /**
  极光推送获取到的推送信息
 
  @param message 推送的消息
  */
 - (void)skyerGerMessage:(NSDictionary *)message;
-
-/**
- 截取出来的激活信息
-
- @return 返回激活信息
- */
-- (NSString *)skyerGerMessageKeyValue;
+//设置试用时间
+- (void)setTryTime:(NSInteger)time;
 
 /**
  试用期
@@ -42,4 +39,9 @@ SkyerSingletonH(SkyerJpushMessage)
 
 -(NSString *)dateToString:(NSDate*) date;
 - (NSDate*)stringToDate:(NSString *)string;
+
+/**
+ 用户初始化获取用户激活信息
+ */
+-(void)skLoginGetUserType;
 @end

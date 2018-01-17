@@ -48,14 +48,18 @@
     if ([self isShowQQstep]) {
         self.viewControllers=@[view1,view2,view3];
     }else{
-        self.viewControllers=@[view1,view2,view3,view4];
+        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"registrationID"] isEqualToString:@"退出软件再试一次"]) {
+            self.viewControllers=@[view1,view2,view3];
+        }else{
+            self.viewControllers=@[view1,view2,view3,view4];
+        }
     }
     
 }
 - (BOOL)isShowQQstep{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSDate *dateLast = [dateFormatter dateFromString:@"2017-07-1"];
+    NSDate *dateLast = [dateFormatter dateFromString:@"2018-1-20"];
     NSDate *today=[NSDate date];
     NSDate *data=[today earlierDate:dateLast];
     return [data isEqualToDate:today];

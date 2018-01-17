@@ -9,13 +9,11 @@
 #import "RouteBookViewController.h"
 #import "SkyerNavigationController.h"
 #import "SkyerUIFactory.h"
-#import "SkToast.h"
 #import "MANaviRoute.h"
-#import "SkyerHUD.h"
 #import "StartAndEndPoint.h"
 #import "SkDataOperation.h"
 #import "skyerDateUse.h"
-#import "SkyerUnlimitedBackstageLocation.h"
+#import <SkyerTools.h>
 
 
 @interface RouteBookViewController ()
@@ -86,7 +84,7 @@
         
         UIAlertAction *alertSure=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-            [SkyerHUD skyerShowProgress:@"数据整理"];
+            [SkHUD skyerShowProgOnWindow:@"数据整理"];
             [_mapView showOverlays:_mapView.overlays edgePadding:UIEdgeInsetsMake(self.view.frame.size.height-100, 0, 0, 0) animated:YES];
             
             NSMutableString *points=[[NSMutableString alloc] init];
@@ -125,10 +123,10 @@
                 [arrRountTrackData addObject:OneTrack];
                 
                 [SkDataOperation SkSaveData:arrRountTrackData withSaveFileName:KsRountTrackData succeedBlock:^{
-                    [SkyerHUD skyerShowToast:@"保存成功"];
+                    [SkHUD skyerShowToast:@"保存成功"];
                     [_mapView showOverlays:_mapView.overlays edgePadding:UIEdgeInsetsMake(50, 20, 50, 20) animated:YES];
                     
-                    [SkyerHUD skyerRemoveProgress];
+                    [SkHUD skyerRemoveProgress];
                 }];
             });
             
@@ -139,7 +137,7 @@
         [self presentViewController:alert animated:YES completion:nil];
         
     }else{
-        [SkyerHUD skyerShowToast:@"预览后再保存"];
+        [SkHUD skyerShowToast:@"预览后再保存"];
     }
 }
 #pragma mark 类型选择
@@ -282,7 +280,7 @@
     if (_indexPoint==count)
     {
         [self showLine];
-        [SkyerHUD skyerRemoveProgress];
+        [SkHUD skyerRemoveProgress];
     }
     else
     {
@@ -293,8 +291,8 @@
 
 - (void)searchRequest:(id)request didFailWithError:(NSError *)error{
     NSLog(@"导航失败%@",error);
-    [SkyerHUD skyerRemoveProgress];
-    [SkyerHUD skyerShowToast:@"获取路线失败"];
+    [SkHUD skyerRemoveProgress];
+    [SkHUD skyerShowToast:@"获取路线失败"];
 }
 
 - (IBAction)btnClear:(id)sender {
@@ -307,14 +305,14 @@
 }
 - (IBAction)btnLook:(id)sender {
     if (_arrPointMake.count>=2) {
-        [SkyerHUD skyerShowProgress:@"开始获取路线"];
+        [SkHUD skyerShowProgOnWindow:@"开始获取路线"];
         _ployLine=[[NSMutableString alloc] init];
         [_mapView removeOverlays:_mapView.overlays];
         _indexPoint=0;
         _distance=0;
         [self getRoteWithAnnotion];
     }else{
-        [SkyerHUD skyerShowToast:@"请设置起点终点"];
+        [SkHUD skyerShowToast:@"请设置起点终点"];
     }
 }
 - (void)getRoteWithAnnotion{
@@ -355,7 +353,7 @@
         
         [_mapView showOverlays:_mapView.overlays edgePadding:UIEdgeInsetsMake(50, 20, 50, 20) animated:YES];
     }else{
-        [SkyerHUD skyerShowToast:@"无显示数据"];
+        [SkHUD skyerShowToast:@"无显示数据"];
     }
     
 }
@@ -378,7 +376,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     
-    [[SkyerUnlimitedBackstageLocation sharedInstance] getPlaceWhitPlaceName:_txtSearch.text finshBlock:^(CLPlacemark *placemark) {
+    [[SkLocation sharedSkLocation] getPlaceWhitPlaceName:_txtSearch.text finshBlock:^(CLPlacemark *placemark) {
         
         CLLocationCoordinate2D coodinate=placemark.location.coordinate;
         [_mapView setCenterCoordinate:coodinate animated:YES];

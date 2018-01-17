@@ -7,14 +7,14 @@
 //
 
 #import "SecondViewController.h"
-#import "SkChildViewController.h"
 #import "TodayTrackViewController.h"
 #import "MyTrackViewController.h"
 #import "QQStepViewController.h"
+#import <SkyerTools.h>
 
 
 @interface SecondViewController ()
-@property(nonatomic ,strong) SkChildViewController *skChildView;
+@property(nonatomic ,strong) SkChildViews *skChildView;
 
 @end
 
@@ -43,14 +43,15 @@
     
     
     NSArray *arrView=[NSArray arrayWithObjects:ttvc,mtvc, nil];
-    _skChildView=[[SkChildViewController alloc] init];
-    [_skChildView addChildViewControllers:arrView addTarget:self whitOption:UIViewAnimationOptionTransitionFlipFromLeft];
+    
+    _skChildView=[[SkChildViews alloc] initWithChildViews:arrView andTag:self andOption:(UIViewAnimationOptionTransitionNone)];
+    
     
 }
 
 - (IBAction)segmentAction:(UISegmentedControl *)sender {
     NSInteger btnTag=sender.selectedSegmentIndex;
-    [_skChildView changVeiw:btnTag];
+    [_skChildView skChangVeiw:btnTag];
 }
 
 @end

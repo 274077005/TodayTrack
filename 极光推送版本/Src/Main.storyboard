@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="9BL-pG-4wy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="9BL-pG-4wy">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -442,6 +442,82 @@
             </objects>
             <point key="canvasLocation" x="2175" y="182"/>
         </scene>
+        <!--激活方式-->
+        <scene sceneID="mn0-bB-bzO">
+            <objects>
+                <viewController storyboardIdentifier="ActivateViewController" title="激活方式" id="C62-k7-rTl" customClass="ActivateViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="keg-uK-xMe"/>
+                        <viewControllerLayoutGuide type="bottom" id="qOB-gV-PV8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f4k-8k-gNT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="谢谢大家的支持,软件激活可以支付宝和微信支付,支付成功后请把截图和激活码发给我进行软件激活.QQ:190226680" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3a-gR-BbS">
+                                <rect key="frame" x="0.0" y="20" width="320" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BaS-y6-tSF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weixin" translatesAutoresizingMaskIntoConstraints="NO" id="bvM-PE-4EL">
+                                <rect key="frame" x="0.0" y="68" width="320" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Dzk-jw-pGI"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhifubao" translatesAutoresizingMaskIntoConstraints="NO" id="nDb-mP-s3e">
+                                <rect key="frame" x="0.0" y="276" width="320" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Hb0-va-M7f"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aw8-2B-j6P">
+                                <rect key="frame" x="0.0" y="68" width="320" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ncg-yx-rif"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="btnImageSave:" destination="C62-k7-rTl" eventType="touchUpInside" id="AWB-hl-WPW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yq8-hz-b9M">
+                                <rect key="frame" x="0.0" y="276" width="320" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="2LJ-wT-6L4"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="btnImageSave:" destination="C62-k7-rTl" eventType="touchUpInside" id="tbm-PC-fwy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Yq8-hz-b9M" firstAttribute="leading" secondItem="f4k-8k-gNT" secondAttribute="leading" id="4SQ-8a-zwy"/>
+                            <constraint firstItem="Aw8-2B-j6P" firstAttribute="top" secondItem="t3a-gR-BbS" secondAttribute="bottom" constant="8" id="7A1-V0-5xn"/>
+                            <constraint firstItem="nDb-mP-s3e" firstAttribute="leading" secondItem="f4k-8k-gNT" secondAttribute="leading" id="IBF-Bw-zs5"/>
+                            <constraint firstItem="bvM-PE-4EL" firstAttribute="leading" secondItem="f4k-8k-gNT" secondAttribute="leading" id="MWs-f4-YUa"/>
+                            <constraint firstAttribute="trailing" secondItem="Yq8-hz-b9M" secondAttribute="trailing" id="Mj0-9I-wPu"/>
+                            <constraint firstItem="Yq8-hz-b9M" firstAttribute="top" secondItem="bvM-PE-4EL" secondAttribute="bottom" constant="8" id="Yp7-Qo-ShK"/>
+                            <constraint firstAttribute="trailing" secondItem="nDb-mP-s3e" secondAttribute="trailing" id="bgT-sR-vuT"/>
+                            <constraint firstAttribute="trailing" secondItem="bvM-PE-4EL" secondAttribute="trailing" id="dvS-ng-P3n"/>
+                            <constraint firstAttribute="trailing" secondItem="t3a-gR-BbS" secondAttribute="trailing" id="j4z-Ot-Zpf"/>
+                            <constraint firstAttribute="trailing" secondItem="Aw8-2B-j6P" secondAttribute="trailing" id="kJn-Yy-dBh"/>
+                            <constraint firstItem="t3a-gR-BbS" firstAttribute="leading" secondItem="f4k-8k-gNT" secondAttribute="leading" id="pco-Uf-dny"/>
+                            <constraint firstItem="t3a-gR-BbS" firstAttribute="top" secondItem="keg-uK-xMe" secondAttribute="bottom" id="r5C-3v-scd"/>
+                            <constraint firstItem="bvM-PE-4EL" firstAttribute="top" secondItem="t3a-gR-BbS" secondAttribute="bottom" constant="8" id="w6Z-g0-S9U"/>
+                            <constraint firstItem="nDb-mP-s3e" firstAttribute="top" secondItem="bvM-PE-4EL" secondAttribute="bottom" constant="8" id="xLf-Uh-OSh"/>
+                            <constraint firstItem="Aw8-2B-j6P" firstAttribute="leading" secondItem="f4k-8k-gNT" secondAttribute="leading" id="yee-gL-HPO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="syv-Eo-nnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2631" y="182"/>
+        </scene>
         <!--骑行-->
         <scene sceneID="XDu-W8-oca">
             <objects>
@@ -449,7 +525,7 @@
                     <tabBarItem key="tabBarItem" title="骑行" image="tabBarItem:o8D-p4-4zL:image" id="o8D-p4-4zL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HXA-pF-4dH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -468,7 +544,7 @@
                     <tabBarItem key="tabBarItem" title="轨迹" image="tabBarItem:d2Y-vL-LK4:image" id="d2Y-vL-LK4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oRR-m4-ORA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -487,7 +563,7 @@
                     <tabBarItem key="tabBarItem" title="路线" image="tabBarItem:1ua-SC-zBw:image" id="1ua-SC-zBw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DUf-Lv-Xn5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -505,7 +581,7 @@
                 <navigationController storyboardIdentifier="QQStepViewControllerNa" automaticallyAdjustsScrollViewInsets="NO" id="hDJ-VI-yl7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tbc-rY-xdM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -564,10 +640,7 @@ AKcAqQCrAK0AsgC1ALcAuQC7AL0AxADMANgA2gDcAN4BVAFZAWQBbQFzAXYBfwGEAYwBjwGWAZ4BqwGw
 AbIBtAG5AcEBxAHJAdEB1AHmAekB7gAAAAAAAAIBAAAAAAAAAD8AAAAAAAAAAAAAAAAAAAHwA
 </mutableData>
         </image>
+        <image name="weixin" width="1242" height="1684"/>
+        <image name="zhifubao" width="600" height="900"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>

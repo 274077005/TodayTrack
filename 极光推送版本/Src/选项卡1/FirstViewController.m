@@ -7,21 +7,18 @@
 //
 
 #import "FirstViewController.h"
-#import "SkyerUnlimitedBackstageLocation.h"
 #import "SkyerNavigationController.h"
-#import "SkScollPageView.h"
 #import "FMDB.h"
 #import "SkyerFmdbUse.h"
-#import "SkToast.h"
 #import "skyerDateUse.h"
 #import "SkyerUIFactory.h"
-#import "WGS84TOGCJ02.h"
-#import "SkDataOperation.h"
-#import "SportGetDataView.h"
 #import "SportMapView.h"
 #import "PopoverView.h"
 #import "ZSHealthKitManager.h"
 #import <CoreMotion/CoreMotion.h>
+#import <SkyerTools.h>
+#import <WGS84TOGCJ02.h>
+#import <SkDataOperation.h>
 
 @interface FirstViewController ()
 
@@ -33,7 +30,7 @@
 @property (nonatomic ,strong) NSMutableArray *arrLastTrack;//我的骑行数据
 @property (nonatomic ,strong) CLLocation *otherLocation;//获取定位的上一个时间
 @property (nonatomic) NSInteger totalTime;//所用的时间
-@property (nonatomic,strong) SportGetDataView *sgdView;
+@property (nonatomic,strong) SkPageViews *sgdView;
 @property (nonatomic,strong) SportMapView *smView;
 @property (nonatomic, strong) HKHealthStore *healthStore;
 @property (nonatomic, strong) CMMotionActivityManager *cmManager;
@@ -87,15 +84,16 @@
 }
 
 
-static void extracted(FirstViewController *object) {
-    [object->_manager authorizeHealthKit:^(BOOL success) {
+- (void)getStep{
+    
+    [_manager authorizeHealthKit:^(BOOL success) {
         
         if (success) {
             
-            [object->_manager getStepCount:^(double value, NSError *error) {
+            [_manager getStepCount:^(double value, NSError *error) {
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    object->_labTodayStep.text=[NSString stringWithFormat:@"计步:%.f 步", value];
+                    _labTodayStep.text=[NSString stringWithFormat:@"计步:%.f 步", value];
                 });
                 
             }];
@@ -104,11 +102,6 @@ static void extracted(FirstViewController *object) {
             
         }
     }];
-}
-
-- (void)getStep{
-    
-    extracted(self);
 }
 
 
@@ -121,38 +114,31 @@ static void extracted(FirstViewController *object) {
 - (void) scrollView{
     _ViewAdd.frame=self.view.bounds;
     self.automaticallyAdjustsScrollViewInsets=NO;
-    
-    SkScollPageView *sspv=[[SkScollPageView alloc] init];
-    sspv.frame=_ViewAdd.bounds;
-    
-    [_ViewAdd addSubview:sspv];
-    
     _sgdView=[[[NSBundle mainBundle] loadNibNamed:@"SportGetDataView" owner:self options:nil] firstObject];
-    
     _smView=[[[NSBundle mainBundle] loadNibNamed:@"SportMapView" owner:self options:nil] firstObject];
     
-    [sspv initScollPageView:@[_sgdView,_smView]];
-    [sspv setPageIndex:^(NSInteger page) {
-        switch (page) {
+    SkPageViews *sspv=[[SkPageViews alloc] initWithFrame:self.view.bounds andArrViews:@[_sgdView,_smView] andSelecetIndex:0];
+    [_ViewAdd addSubview:sspv];
+    
+    sspv.indexBlock = ^(NSInteger index) {
+        switch (index) {
             case 0:
             {
-//                self.title=@"骑行";
+                //                self.title=@"骑行";
                 
             }
-                break;
+            break;
             case 1:
             {
-//                self.title=@"行程";
+                //                self.title=@"行程";
                 
             }
-                break;
-                
+            break;
+            
             default:
-                break;
+            break;
         }
-        
-        
-    }];
+    };
 }
 
 - (void)didReceiveMemoryWarning {
@@ -218,15 +204,14 @@ static void extracted(FirstViewController *object) {
 
 #pragma mark - 暂停定位
 - (void) startUpdatingLocations{
-    [[SkyerUnlimitedBackstageLocation sharedInstance] startUpdatingLocations];
+    SkLocation.sharedSkLocation.skInitMannager().skStarUpdateLocation();
 }
 
 - (void)creationDatabase{
-    //获取位置信息
-    [[SkyerUnlimitedBackstageLocation sharedInstance] startUpdatingLocations];
     
-    [[SkyerUnlimitedBackstageLocation sharedInstance] getLocations:^(NSArray *locations) {
-        [[SkyerUnlimitedBackstageLocation sharedInstance] stopUpdatingLocations];
+    SkLocation.sharedSkLocation.skInitMannager().skStarUpdateLocation();
+    SkLocation.sharedSkLocation.locations = ^(NSArray *locations) {
+        SkLocation.sharedSkLocation.skStopUpdateLocation();
         
         _location=[locations firstObject];
         CGFloat speed=_location.speed;
@@ -236,7 +221,9 @@ static void extracted(FirstViewController *object) {
             speed=0;
         }
         _labSpeed.text=[NSString stringWithFormat:@"%0.2f",speed];
-    }];
+        
+    };
+
 }
 #pragma mark 插入数据
 -(void)insert:(CLLocation *)location{
